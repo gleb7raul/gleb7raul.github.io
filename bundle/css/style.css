@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body, html {
+  height: 100%; }
+
+.content-wrapper {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  min-height: 100%; }
+
+.particles-js {
+  z-index: -5;
+  position: absolute;
+  width: 100%; }
+
+header h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 50px; }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.main {
+  display: flex;
+  justify-content: center;
+  position: relative; }
+
+.main canvas:nth-child(1) {
+  z-index: -4; }
+
+.main canvas:nth-child(2) {
+  z-index: -3;
+  position: absolute; }
+
+.main canvas:nth-child(3) {
+  z-index: -2;
+  position: absolute; }
+
+.main canvas:nth-child(4) {
+  z-index: -1;
+  position: absolute; }
+
+.attack-wrapper {
+  position: absolute;
+  top: 50px;
+  z-index: 1; }
+
+.attack {
+  display: none;
+  width: 650px;
+  height: 400px;
+  background: #f2f2f2;
+  flex-direction: column;
+  border: 5px solid black;
+  border-radius: 5%; }
+
+div.attack > p {
+  padding-top: 31px; }
+
+.all-attacks p {
+  display: flex;
+  align-items: center; }
+
+.pick {
+  height: 50px;
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 5%; }
+
+label {
+  padding-left: 10px; }
+
+div.attack p {
+  text-align: center;
+  height: 100px;
+  font-size: 25px; }
+
+.all-attacks {
+  display: flex;
+  justify-content: space-evenly; }
+
+.tasks-wrapper {
+  position: absolute;
+  top: 50px;
+  z-index: 1; }
+
+.tasks {
+  display: none;
+  width: 580px;
+  height: 350px;
+  background: #f2f2f2;
+  flex-direction: column;
+  border: 5px solid black;
+  border-radius: 5%;
+  font-size: 25px; }
+
+.tasks p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+.solve {
+  width: 100px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 5%; }
+
+/*
+.tasks p:nth-child(2) span {
+    margin-right: 50px;
+}*/
+.playpause {
+  width: 30px;
+  height: 30px;
+  background: url(data:image/png;base64,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);
+  border: none;
+  cursor: pointer; }
+
+.right, .wrong, .lost {
+  display: none;
+  font-size: 40px;
+  justify-content: center;
+  color: #fff;
+  position: absolute;
+  top: 100px; }
+
+.start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: absolute;
+  width: 1024px;
+  height: 512px;
+  background: #f2f2f2; }
+
+.player-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
+.start-game {
+  background: #f2f2f2;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  outline: none; }
+
+.start-game img {
+  outline: none; }
+
+.restart {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: absolute;
+  width: 1024px;
+  height: 512px;
+  z-index: 1;
+  background: #f2f2f2; }
+
+.restart-game {
+  background: #f2f2f2;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  outline: none; }
+
+.restart-game img {
+  outline: none;
+  background: #f2f2f2; }
+
+table.record-table {
+  width: 50%;
+  position: absolute;
+  z-index: 5;
+  top: 25%; }
+
+table tr:nth-child(1) td:nth-child(2) img {
+  float: right;
+  cursor: pointer; }
+
+table tr:nth-child(1) td:nth-child(2) img:hover {
+  transform: scale(1.1); }
+
+.carousel {
+  margin-top: 100px; }
+
+.game-rules {
+  margin-top: 100px;
+  text-align: center;
+  font-weight: bold;
+  color: white; }
+
+.developers {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 50px; }
+
+.developers-info {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 50px; }
+
+.sortable {
+  display: none;
+  justify-content: center;
+  font-size: 40px; }
+
+.letters {
+  list-style-type: none;
+  letter-spacing: 10px; }
+
+input.user-input {
+  width: 250px;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=style.css.map*/

@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+  <title>webpack/ES6 setup</title>
+  <link rel="stylesheet" href="style/css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+  <div class="content-wrapper">
+    <div  class="particles-js" id="particles-js"></div>
+    <div class="wrapper">
+      <header>
+        <h1>prodigy game</h1>
+      </header>
+      <p class="player-name"><label style="margin-bottom: 0" for="plyername">Name</label><input  style="margin-left: 10px" id="player-name" type="text" placeholder="type your name" name="plyername"></p>
+      <div class="main">
+        <canvas id="canvas" width="1024" height="512">
+            Your browser does not support canvas. Please try again with a different browser.
+        </canvas>
+        <canvas id="hero-canvas" width="1024" height="512">
+          Your browser does not support canvas. Please try again with a different browser.
+        </canvas>
+        <canvas id="monster-canvas" width="1024" height="512">
+          Your browser does not support canvas. Please try again with a different browser.
+        </canvas>
+        <canvas id="health-canvas" width="1024" height="512">
+          Your browser does not support canvas. Please try again with a different browser.
+        </canvas>
+        <div class="attack-wrapper">
+          <div id="attack" class="attack">
+            <p>Choose the way you want to attack</p>
+              <div class="all-attacks">
+                <p><input id="attack1" type="radio" name="attacking" value="snow"><label for="attack1">bomb</label></p>
+                <p><input id="attack2" type="radio" name="attacking" value="glazier"><label for="attack2">lightning</label></p>
+                <p><input id="attack3" type="radio" name="attacking" value="ice"><label for="attack3">fire</label></p>
+              </div>
+            <p><button id="pick" class="pick" type="button">pick</button></p>
+          </div>
+        </div>
+        <div class="tasks-wrapper">
+          <div id="tasks" class="tasks">
+            <p id="task-description"></p>
+            <p>
+              <span id='task'>
+                  <ul class="sortable" id="sortable"></ul>
+              </span>
+              <input  class="user-input" id='user-input' type="text">
+            </p>
+            <p><button id="solve" class="solve" type="button">solve</button></p>
+          </div>
+        </div>
+        <div id="start" class="start">
+          <button id="start-game" class="start-game">
+              <img class="start-game-img" id="start-game-img" src="./images/startgame.png" alt="start-game">
+          </button>
+        </div>
+        <div id="restart" class="restart">
+          <button id="restart-game" class="restart-game">
+              <img class="restart-game-img" id="restart-game-img" src="./images/restart.png" alt="restart-game">
+          </button>
+        </div>
+        <div id="right" class="right">You are right!</div>
+        <div id="wrong" class="wrong">You are wrong, now it's a Monster's turn!</div>
+        <div id="lost" class="lost">You lost!</div>
+      </div>
+      <div class="game-rules">
+        <p>Game rules:</p>
+        <p>Type your name before starting the game or it's gonna be Player by default.</p>
+        <p>After the game has been started you have to choose the way you want to attack. After choosing one of the options to attack you'll see the random task you need to solve to proceed your attack. If your answer is right, your attack will be succeeded either way it's gonna be monster's turn to attack.</p>
+        <p>Monster attacks straight after you.</p>
+        <p>You need to kill as many monster's as you can.</p>
+        <p>Record table will be displayed when you lose.</p>
+        <p>We have 6 different tasks for you.</p>
+        <p>Have fun!</p>
+      </div>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img width="1024px" height="512px" class="first-slide d-block w-100" src="/images/screen1.png" alt="First Slide">
+          </div>
+          <div  class="carousel-item">
+            <img width="1024px" height="512px" class="second-slide d-block w-100" src="/images/screen2.png" alt="Second Slide">
+          </div>
+          <div class="carousel-item">
+            <img width="1024px" height="512px" class="third-slide d-block w-100" src="/images/screen3.png" alt="Third Slide">
+          </div>
+          <div  class="carousel-item">
+            <img width="1024px" height="512px" class="forth-slide d-block w-100" src="/images/screen4.png" alt="Forth Slide">
+          </div>
+          <div  class="carousel-item">
+            <img width="1024px" height="512px" class="fifth-slide d-block w-100" src="/images/screen5.png" alt="Fiveth Slide">
+          </div>
+          <div  class="carousel-item">
+            <img width="1024px" height="512px" class="sixth-slide d-block w-100" src="/images/screen6.png" alt="Sixth Slide">
+          </div>
+          <div  class="carousel-item">
+            <img width="1024px" height="512px" class="seventh-slide d-block w-100" src="/images/screen7.png" alt="Seventh Slide">
+          </div>
+          <div  class="carousel-item">
+            <img width="1024px" height="512px" class="eighth-slide d-block w-100" src="/images/screen8.png" alt="Eighth Slide">
+          </div>
+          <div  class="carousel-item">
+            <img width="1024px" height="512px" class="nineth-slide d-block w-100" src="/images/screen9.png" alt="Nineth Slide">
+          </div>
+        </div>
+        <a href="#myCarousel" class="carousel-control-prev" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a href="#myCarousel" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <p class="developers">Developer:</p>
+      <div class="developers-info">
+        <div>Hleb Nebiadukhin</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="vocabular.json"></script>
+  <script src="bundle/js/app.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'particles.json', function(){
+      console.log('particles.json loaded...');
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
+  </script>
+</body>
+</html>

@@ -1,2 +1,23 @@
-# gleb7raul.github.io
-public version
+# webpack sample project 
+ 
+Webpack config 
+
+## Environment setup 
+
+```sh
+  $ npm install
+```
+
+## Development
+
+Start the Webpack server (includes live reloading when you change files) on localhost:8000:
+
+```sh
+  $ npm start
+```
+
+## Bundling 
+
+```sh
+  $ npm run build
+```
