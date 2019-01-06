@@ -1012,7 +1012,7 @@ class Health extends __WEBPACK_IMPORTED_MODULE_2__Drawable__["a" /* Drawable */]
             };
             if (this.frameX === 50) {
                 setTimeout(() => {
-                    game.monster.monsterAttack();
+                    __WEBPACK_IMPORTED_MODULE_4__app__["attackWindow"].style.display = "flex";
                 }, 1500);
                 this.frameX = 0;
                 return;
@@ -1058,9 +1058,7 @@ class Health extends __WEBPACK_IMPORTED_MODULE_2__Drawable__["a" /* Drawable */]
                 tr.appendChild(tdCountBeaten);
                 table.appendChild(tr);
                 table.classList.add("table", "table-dark");
-                let temp = 0;
                 for (let i = 0; i < recordArray.length; i++) {
-                    temp++;
                     let tr = document.createElement('tr');
                     let tdName = document.createElement('td');
                     let tdCountBeaten = document.createElement('td');
@@ -1069,16 +1067,15 @@ class Health extends __WEBPACK_IMPORTED_MODULE_2__Drawable__["a" /* Drawable */]
                     tr.appendChild(tdName);
                     tr.appendChild(tdCountBeaten);
                     table.appendChild(tr);
-                    if (temp === 5) {
-                        setTimeout(() => {
-                            mainDiv.appendChild(table);
-                        }, 2000);
-                        window.imgs.close.addEventListener('click', () => {
-                            table.style.display = 'none';
-                        });
-                        return;
-                    }
                 }
+                setTimeout(() => {
+                    mainDiv.appendChild(table);
+                }, 2000);
+                setTimeout(() => {
+                    window.imgs.close.addEventListener('click', () => {
+                        table.style.display = 'none';
+                    });
+                });
                 return;
             };
             if (this.frameX === 50) {
