@@ -1,5 +1,4 @@
-
-class Drawable {
+export class Drawable {
     constructor(){
         this.canvasWidth = 0;
 	    this.canvasHeight = 0;
@@ -10,5 +9,3 @@ class Drawable {
     };
     draw(){};
 };
-
-export {Drawable};

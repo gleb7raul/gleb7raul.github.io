@@ -1,10 +1,9 @@
-import {Drawable} from './Drawable';
-import {Monster} from './Monster';
-import {Hero} from './Hero';
-import {Health} from './Health';
-import {animate} from './app';
+import {Monster} from './persons/Monster';
+import {Hero} from './persons/Hero';
+import {Health} from './persons/Health';
+import {animate} from '../utils/common';
 
-class Game {
+export class Game {
     constructor(){
         this.deadMonsters = 0;
     }
@@ -55,5 +54,3 @@ class Game {
 
     };
 }
-
-export {Game};

@@ -1,9 +1,6 @@
-import {Game} from './Game';
-import {Drawable} from './Drawable';
-import {Monster} from './Monster';
-import {Health} from './Health';
+import { Drawable } from '../abstractClasses/Drawable';
 
-class Hero extends Drawable{
+export class Hero extends Drawable{
     constructor(){
         super();
         this.x = 0;
@@ -111,7 +108,7 @@ class Hero extends Drawable{
             this.frameX = 0;
             this.tempLightning++;
         }
-        
+
         this.context.clearRect(this.canvas.width/2,0,this.canvas.width/2,this.canvas.height);
         this.context.drawImage(this.lightningImage,this.frameX,0,64,64,this.canvas.width-430,0,128,512);
         this.frameX += 128;
@@ -147,5 +144,3 @@ class Hero extends Drawable{
         requestAnimFrame(this.drawExplosionFire.bind(this));
     }
 };
-
-export {Hero};

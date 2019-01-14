@@ -1,11 +1,7 @@
-import {Game} from './Game';
-import {Hero} from './Hero';
-import {Drawable} from './Drawable';
-import {Monster} from './Monster';
-import {attackWindow} from './app';
+import {Drawable} from '../abstractClasses/Drawable';
+import {attackWindow} from '../../commonUnchangableEls';
 
-
-class Health extends Drawable{
+export class Health extends Drawable{
     constructor(){
         super();
         this.heroHealth = 0;
@@ -36,7 +32,7 @@ class Health extends Drawable{
         }
         this.frameX += 1;
         this.monsterHealth += 1;
-        requestAnimFrame(this.damage.bind(this));     
+        requestAnimFrame(this.damage.bind(this));
     }
     damageHero(){
         if(this.frameX <= 50){
@@ -68,7 +64,7 @@ class Health extends Drawable{
                 span.innerHTML = 'Record';
                 tdCountBeaten.appendChild(span);
                 window.imgs.close.id = 'close-image';
-                
+
                 tdCountBeaten.appendChild(window.imgs.close);
                 tr.appendChild(tdName);
                 tr.appendChild(tdCountBeaten);
@@ -83,7 +79,7 @@ class Health extends Drawable{
                     tr.appendChild(tdName);
                     tr.appendChild(tdCountBeaten);
                     table.appendChild(tr);
-                
+                   
                 }
                 setTimeout(()=>{mainDiv.appendChild(table)},2000);
                 setTimeout(()=>{window.imgs.close.addEventListener('click',()=>{table.style.display = 'none'})}); 
@@ -99,8 +95,6 @@ class Health extends Drawable{
         }
         this.frameX += 1;
         this.heroHealth += 1;
-        requestAnimFrame(this.damageHero.bind(this));     
+        requestAnimFrame(this.damageHero.bind(this));
     }
 }
-
-export {Health};

@@ -1,10 +1,7 @@
-import {Game} from './Game';
-import {Hero} from './Hero';
-import {Drawable} from './Drawable';
-import {Health} from './Health';
-import {attackWindow} from './app';
+import { Drawable } from '../abstractClasses/Drawable';
+import { attackWindow } from '../../commonUnchangableEls';
 
-class Monster extends Drawable{
+export class Monster extends Drawable{
     constructor(){
         super();
         this.headArray = [window.imgs.head1,window.imgs.head2,window.imgs.head3];
@@ -46,7 +43,7 @@ class Monster extends Drawable{
     };
     draw(){
         this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
-        
+
         if(this.slideX === 20){
             this.temp = true;
         }
@@ -128,12 +125,12 @@ class Monster extends Drawable{
             this.particles.push({
                 x: this.canvas.width-400 + this.slideX + this.bodyImage.width/2,
                 y: this.canvas.height - this.bodyImage.height/2,
-                xv: (Math.random()-0.5)*2.0*5.0,  
-                yv: (Math.random()-0.5)*2.0*5.0,  
+                xv: (Math.random()-0.5)*2.0*5.0,
+                yv: (Math.random()-0.5)*2.0*5.0,
                 age: 0,
             });
         };
-        this.updateDestroy();   
+        this.updateDestroy();
     };
     updateDestroy(){
         for(let i=0; i < this.particles.length; i++) {
@@ -157,5 +154,3 @@ class Monster extends Drawable{
         requestAnimFrame(this.updateDestroy.bind(this));
     };
 };
-
-export {Monster};
